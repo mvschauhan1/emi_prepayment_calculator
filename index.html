@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4a2e01">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./icon-192x192.png">
+    <title>EMI & PRE-PAYMENT CALCULATOR</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <img src="./BPD_Logo.png">
+        <h1><b>EMI & PRE-PAYMENT CALCULATOR</b></h1>
+        <section>
+            <h2><b>EMI CALCULATOR</b></h2>
+            <label for="loan_amount"><b>Loan Amount: </b></label>
+            <input type="number" id="loan_amount" /><br>
+
+            <label for="interest_rate">
+                <b>Interest Rate (%): <label for = "flat">(Flat Interest)</label>
+                    <input type="checkbox" id = "flat" name="interest_type" value = "flat" /></b><br>
+            <input type="number" id="interest_rate" />
+            <br>
+
+            <label for="tenure"><b>Tenure (months): </b></label>
+            <input type="number" id="tenure" /><br>
+
+            <input type="button" id="calculate" value="Generate EMI Chart"><br>
+
+            <p><span id="emi_calculated"></span></p>
+        </section>
+        <section>
+            <h3><b>EMI Breakdown</b></h3>
+            <table id="emi_chart_table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>EMI (₹)</th>
+                        <th>Interest Paid (₹)</th>
+                        <th>Principal Paid (₹)</th>
+                        <th>Remaining Loan Balance (₹)</th>
+                        <th>Cumulative Principal Paid (₹)</th>
+                        <th>% of Loan Paid</th>
+                    </tr>
+                </thead>
+                <tbody id="emi_chart">
+                    
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2><b>PRE-PAYMENT CALCULATOR</b></h2>
+            <label for="loan_emis_paid"><b>No. of Monthly EMI payments made till date: </b></label>
+            <input type="number" id="loan_emis_paid" />
+            <p><span id="emis_originally_outstanding"></span></p><br>
+
+            <label for="prepayment_amount">
+            <b>Amount to be prepaid: </b><br>
+            <input type="number" id="prepayment_amount" /><br>
+            
+            <p id="prepayment_options"><b>Which would you prefer?</b></p>
+            <input type="radio" id="emi_reduction" name = "options" /><label for="tenure"><b>EMI Reduction</b></label> 
+            <input type="radio" id="tenure_reduction" name = "options" /><label for="tenure" id = "label_tenure_reduction"><b>Tenure Reduction</b></label><br>
+
+            <input type="button" id="calculate_new_emi_tenure" value="Generate Revised EMI Chart"><br>
+
+            <p><span id="recalculated_emi_or_tenure"></span></p>
+        </section>
+        <section>
+            <h3><b>Revised EMI Breakdown</b></h3>
+            <table id="revised_emi_chart_table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>EMI (₹)</th>
+                        <th>Interest Paid (₹)</th>
+                        <th>Principal Paid (₹)</th>
+                        <th>Remaining Loan Balance (₹)</th>
+                        <th>Cumulative Principal Paid (₹)</th>
+                        <th>% of Loan Paid</th>
+                    </tr>
+                </thead>
+                <tbody id="revised_emi_chart">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("./service-worker.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch((error) => console.error("Service Worker Registration Failed:", error));
+        }
+    </script>
+</body>
+</html>
