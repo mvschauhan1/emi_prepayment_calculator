@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    line-height: 1.6;
+    background-color: #f8ebeb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+main {
+    height: 100vh;
+    font-family: sans-serif;
+    width: 100vw;
+    margin: 0 auto;
+    background-color: #f8ebeb;
+    text-align: center;
+    font-size: 12px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    color: #333;
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    color: #1b201a;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="number"] {
+    width: 40%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input[type="button"] {
+    background-color: #4a2e01;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+    text-align: center;
+}
+
+input[type="button"]:hover {
+    background-color: #88aa97;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+#emi_calculated, #recalculated_emi_or_tenure {
+    color: #582f04;
+    border-radius: 50px;
+    text-shadow: #ddd;
+}
+#emi_chart_table, #revised_emi_chart_table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+td {
+    font-size: 14px;
+}
+
+@media (max-width: 430px) and (min-width: 360px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    header {
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    main {
+        height: auto;
+        width: 100%;
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    input[type="number"] {
+        width: 80%;
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    input[type="button"] {
+        width: 60%;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    #emi_chart_table, #revised_emi_chart_table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
